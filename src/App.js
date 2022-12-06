@@ -29,8 +29,8 @@ function App() {
   function handleStart(event){
     event.preventDefault();
     if(startInd >11 )
-    {setStartInd(startInd-11);
-    setStartInd(maxInd -11)
+    {setStartInd(startInd-6);
+    setStartInd(maxInd-6)
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=" + apiKey+"&startIndex="+startInd + "&maxResults="+maxInd)
       .then(data => {
         
@@ -42,8 +42,8 @@ function App() {
 }
   function handleMax(event){
     event.preventDefault();
-     setStartInd(startInd+11);
-      setStartInd(maxInd +11);
+     setStartInd(startInd+6);
+      setStartInd(maxInd +6);
       axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=" + apiKey+"&startIndex="+startInd + "&maxResults="+maxInd)
       .then(data => {
         console.log(data.data.items);
